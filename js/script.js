@@ -27,7 +27,7 @@ function createUserCard(user) {
     const card = document.createElement('div');
     card.classList.add('card');
 
-        if(user.name){
+        if(user.login){
             card.innerHTML = `
             <div>
                 <img class="avatar" src="${user.avatar_url}" alt="">
@@ -43,7 +43,7 @@ function createUserCard(user) {
                     <li><i class="fas fa-comment-alt"></i> ${user.public_repos}</li>
                 </ul>
                 <h2>Repos: </h2>
-                <div class="repos" id="repos"></div>
+                ${user.public_repos ? '<div class="repos" id="repos"></div>' : '<p style="margin-top: 1rem">no repos</p>'}
             </div>
         `;
         }else{
